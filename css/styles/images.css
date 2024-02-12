@@ -1,0 +1,36 @@
+/*Imagenes responsivas*/
+
+img {
+    max-width: 100%;
+    height: auto; /* Para navegadores viejos */
+}
+
+
+.card {
+    border: medium solid #000;
+    width: 400px;
+    height: 400px;
+}
+
+.card img {
+    background-color: orange;
+    height: 300px;
+    object-fit: contain;
+    object-fit: scale-down; /* Toma el valor que sea menor de los valores contain y none  */
+    object-fit: none;
+    object-fit: fill; /* default */
+    object-fit: cover;
+    object-position: 50% 50%;
+    object-position: left top;
+    object-position: 50% 50%;
+    object-position: right bottom;
+    object-position: left top;
+    object-position: -90px top;
+    object-position: 50% 50%;
+
+}
+
+ .card h4 {
+    text-align: center;
+} 
+

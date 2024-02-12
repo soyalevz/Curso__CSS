@@ -1,0 +1,304 @@
+[class^="box"]{
+  margin: 3rem auto;
+  background-color: orangered;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+}
+
+.box-flexible {
+    width: 50%;
+    height: 20vh;
+}
+
+.box-flexible-2{
+    max-width: 960px;
+    min-width: 280px;
+    max-height: 480px;
+    min-height: 280px; /* La altura siempre dependera del contenido */
+}
+
+.box-flexible-3{
+    max-width: 960px;
+    min-width: 280px;
+    max-height: 480px;
+    min-height: 280px;
+
+    /* Propiedades bases definidas en px unidades absolutas del mundo real
+        Estas tienen mayor jerarquia entre los maximos y minimos */
+    width: 300px;
+    height: 300px;
+}
+
+.box-flexible-4{
+    max-width: 960px;
+    min-width: 280px;
+    max-height: 480px;
+    min-height: 280px;
+/* La caja obedece al max-width 960px pero se nota cuando cerramos el inspector de elementos, y obedece al minimo que sería 280px */
+    width: 50%;
+    height: 20vh;
+}
+
+/* Imagenes responsivas y vídeos */
+img,
+iframe, 
+video{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tecnica para hacer videos responsivos */
+.responsive-media {
+    position: relative;
+    width: 100%;
+    height: 0;
+
+    /* Formato widescreen 16:9 
+    16 ---> 100%
+    9 ---> 56.25
+    */
+    padding-bottom: 56.25%;
+}
+
+.responsive-media > ¨{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Nueva forma para videos responsivos */
+.aspect-ratio-16-9 {
+    background-color: rebeccapurple;
+    aspect-ratio: 16/9;
+}
+
+.aspect-ratio-1-1{
+    aspect-ratio: 1/1;
+}
+
+/* Media queries */
+
+@media print {
+    @page {
+        size: A6 landscape;
+
+    }
+
+    body {
+        font-size: 10pt;
+        font-family: san-serif;
+        background-color: #000;
+        color: greenyellow;
+    }
+}
+
+@media screen and (prefers-reduced-motion:reduce){
+    html {
+        scroll-behavior: auto;
+        scroll-behavior: smooth;
+    }
+}
+
+@media screen and (prefers-reduced-motion:no-preference){
+    html {
+        scroll-behavior: auto;
+        scroll-behavior: smooth;
+    }
+}
+
+@media screen and (prefers-color-scheme:dark){
+    html {
+        background-color: #000;
+        color: cadetblue;
+    }
+}
+
+@media screen and (prefers-color-scheme:light){
+    html {
+        background-color: #fff;
+        color: darkblue;
+    }
+}
+
+@media screen and (prefers-color-scheme:no-preference){
+    html {
+        background-color: #fff;
+        color: darkred;
+    }
+}
+
+@media screen and (prefers-color-scheme:dark){
+    html {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+/* En Mobile First se usa min-width que significa lo minimo, del valor que des, hacia arriba */
+@media  screen and (min-width: 480px) {
+    html {
+        background-color: lightpink;
+    }
+}
+
+/* En Desktop First se usa max-width que signifaca lo maximo, del valor que des hacia, abajo  */
+@media  screen and (max-width: 1024px) {
+    html {
+        background-color: #fff;
+    }
+}
+
+@media  screen and (min-width: 1200px) {
+    html {
+        background-color: white;
+    }
+}
+
+/* Feature Queries */
+
+@supports(grid-template-columns: subgrid){
+    html{
+        background-color: #000;
+        color: greenyellow;
+    }
+}
+
+
+@supports not (grid-template-columns: subgrid){
+    html{
+        background-color: darkolivegreen;
+        color: #fff;
+    }
+}
+
+
+@supports(display:grid) and (grid-template-columns:subgrid){
+    html{
+        background-color: darkslateblue;
+        color: lightgreen;
+    }
+}
+
+@supports(display:grid) or (grid-template-columns:subgrid){
+    html{
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+/* Container Queries */
+
+.container {
+    container-type: inline-size;
+}
+
+.card {
+    border: thin solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    contain: layout inline-size style; /* Con esto activamos las caracteristicas de container queries */
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+ @container (max-width:600px) {
+   .card-container {
+    display: flex;
+   }
+
+   .card-container > * {
+    width: 50%;
+    flex-basis: 50%;
+   }
+}
+
+/* Fluid Grid */
+
+.fluid-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fluid-item{
+    border: thin solid #000;
+    padding: 1rem;
+}
+
+/* Textos Fluidos */
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
+    --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
+    --step-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+    --step-1: clamp(1.35rem, 1.2761rem + 0.3696vi, 1.5625rem);
+    --step-2: clamp(1.62rem, 1.5041rem + 0.5793vi, 1.9531rem);
+    --step-3: clamp(1.944rem, 1.771rem + 0.8651vi, 2.4414rem);
+    --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vi, 3.0518rem);
+    --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vi, 3.8147rem);
+  }
+
+  .step--2{
+    font-size: var(--step--2);
+  }
+
+  .step--1{
+    font-size: var(--step--1);
+  }
+
+  .step--0{
+    font-size: var(--step--0);
+  }
+
+  .step-1{
+    font-size: var(--step-1);
+  }
+
+  .step-2{
+    font-size: var(--step-2);
+  }
+
+  .step-3{
+    font-size: var(--step-3);
+  }
+
+  .step-4{
+    font-size: var(--step-4);
+  }
+
+  .step-5{
+    font-size: var(--step-5);
+  }
+
+  /* Hack para textos
+  
+  14 = tamaño de letra más pequeño 
+  18 = tamaño de letra más grande
+  300 = tamaño de viewport más pequeño
+  1400 = tamaño de viewport más grande
+  */
+
+  body {
+    font-size: calc(14px + (18 - 14) * ((100vw - 300px)/(1400 - 300)));
+    /* font-size: calc(12px + (24 - 12) * ((100vw - 200px) / (1600 - 200))); */
+  }
+
+  .box-fluid {
+    width: clamp(400px, 60vw, 600px);
+    height: clamp(200px, 30vh, 300px);
+  }

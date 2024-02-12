@@ -1,0 +1,1 @@
+console.log("Mi navegador no soporta código js + ES6");

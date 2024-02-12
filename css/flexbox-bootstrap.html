@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .hero-image {
+        min-height: 100vh;
+        background-image: url("https://4kwallpapers.com/images/wallpapers/blue-sky-half-moon-crescent-moon-clouds-star-trails-5k-3840x2160-8404.png");
+        background-repeat: no-repeat;
+        color: #fff;
+      }
+
+      .hero-image div {
+        background-color: rgba(0, 0, 0, 0.75);
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar w/ text</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
+          <span class="navbar-text"> Navbar text with an inline element </span>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-grow-1">
+      <h1>Hello, world!</h1>
+      <section
+        class="bg-info text-white d-flex flex-column align-items-center flex-lg-row justify-content-evenly"
+      >
+        <article>item 1</article>
+        <article>item 2</article>
+        <article>item 3</article>
+        <article>item 4</article>
+        <article>item 5</article>
+      </section>
+      <section class="hero-image min-vh-100 text-white">
+        <div class=" min-vh-100 d-flex justify-content-center align-items-center text-aling-center">
+          <h1>Flexbox + Bootstrap is funking AWESONE COOL!!!</h1>
+        </div>
+      </section>
+      <div class="container">
+        <section class="row alig-items-lg-center">
+          <article class="col-12 col-lg-6 ">
+            <h2>Titulo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis, fugiat, quas maxime hic deserunt porro incidunt consequuntur, dicta sit optio labore temporibus dolore tempore magni voluptates aspernatur aperiam laborum.</p>
+          </article>
+          <article class="col-12 col-lg-6">
+            <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1aV5F7lhR9-C96S4bob4bcCpcCk1rpOWxcpCJFmZiQRpNqrOEfT5JTIPjkJB_lsSctgo&usqp=CAU" alt="itachi">
+          </article>
+        </section>
+        <section class="row alig-items-lg-center">
+          <article class="col-12 col-lg-6 order-lg-1">
+            <h2>Naturaleza</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis, fugiat, quas maxime hic deserunt porro incidunt consequuntur, dicta sit optio labore temporibus dolore tempore magni voluptates aspernatur aperiam laborum.</p>
+          </article>
+          <article class="col-12 col-lg-6 ">
+            <img class="img-fluid" src="https://i0.wp.com/thelegalgeeks.com/wp-content/uploads/2022/03/itachi-photo.png?resize=238%2C340" alt="itachi">
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white">
+      <h4>Sticky Footer con Bootstrap</h4>
+      <a href="index.html#temario-css">🦊</a>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

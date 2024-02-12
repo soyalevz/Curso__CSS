@@ -1,0 +1,86 @@
+/*
+Variables en Css
+:root tiene más peso para aplicar estilos en variables que la etiqueta html, por eso se recomienda definir aquí las variables para todo el documento.
+*/
+:root {
+ color: cadetblue;
+ --default-bg-color: skyblue;
+}
+
+html {
+  color: red;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+
+
+.custom-props-1 {
+  --primary-color: gray;
+  --font-size: 32px;
+}
+
+.custom-props-1 {
+  color: var(--primary-color);
+  font-size: var(--font-size);
+}
+
+.custom-props-2{
+  background-color: var(--default-bg-color);
+  border: thin solid var(--border-color);
+  padding: 1rem;
+}
+
+.custom-props-3 {
+  font-size: var(--font-size);
+  border: thin solid var(--border-color);
+  padding: 1rem;
+}
+
+.title-props {
+  --primary-color: navy;
+  color: var(--primary-color, orange);
+  background-color: var(--default-bg-color);
+}
+
+/*
+Función url()
+*/
+
+.url{
+  background-image: url("../assets/simple-background-artwork-fox-digital-art-wallpaper-preview.jpg");
+}
+
+
+/* calc() */
+
+.ch-10 {
+  --padding-size: 2ch;
+  --num-ch: 10ch;
+  background-color: var(--default-bg-color);
+  font-size: 2rem;
+  padding: var(--padding-size);
+  width: calc(var(--num-ch) + var(--padding-size) * 2);
+}
+
+/*
+Funciones min() & max()
+*/
+.min-max{
+  background-color: var(--default-bg-color);
+  margin-top: 1rem;
+  width: min(300px, 20vw, 20rem);
+  height: max(200px,25vh);
+}
+
+/*
+Función clamp()
+*/
+
+h1 {
+  font-size: clamp(2rem, 1rem + 3vw, 3rem);
+}

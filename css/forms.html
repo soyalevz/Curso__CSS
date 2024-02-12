@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/forms.css">
+    <title>Formularios en CSS</title>
+</head>
+<body>
+    <h1>Formularios en CSS</h1>
+    <form class="contact-form" action="https://formsubmit.co/your@email.com" method="POST">
+        <input type="text" name="nombre" placeholder="Escribe tu nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+          title="Nombre sólo acepta letras y espacios en blanco" required>
+      
+        <input type="email" name="correo" placeholder="Escribe tu correo" pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
+          title="Formato de correo inválido" required>
+      
+        <textarea name="comentarios"  placeholder="Escribe tu nombre" cols="30" rows="10" required></textarea>
+     
+        <input type="submit">
+      </form>
+    <a href="index.html#temario-css">🦊</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+body,
+h1,
+h2 {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.slide {
+    width: 100%;
+    max-height: 100vh;
+    padding: 2rem;
+    color: #d9e8f0;
+    background-color: #1e2345;
+}
+
+.slide:nth-child(even){
+    background-color:  #4ab6f0;
+    color: #000;
+}
